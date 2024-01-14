@@ -1,8 +1,7 @@
 import streamlit as st
-from rembg import remove
-from PIL import Image
-from io import BytesIO
-import base64
+from rembg import remove #bibliothèque qui retire l'arrière-plan d'une image.
+from PIL import Image #bibliothèque de traitement d'image
+from io import BytesIO #classe Python qui traite les octets
 
 st.set_page_config(layout="wide", page_title="Image Background Remover")
 
