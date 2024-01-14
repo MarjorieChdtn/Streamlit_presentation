@@ -10,14 +10,7 @@ st.sidebar.write("## Upload and download :gear:")
 
 MAX_FILE_SIZE = 5 * 1024 * 1024  # 5MB
 
-# Download the fixed image
-def convert_image(img):
-    buf = BytesIO()
-    img.save(buf, format="PNG")
-    byte_im = buf.getvalue()
-    return byte_im
-
-
+# Mise ene ligne de l'image et detourage
 def fix_image(upload):
     image = Image.open(upload)
     col1.write("Image originale :camera:")
@@ -28,6 +21,15 @@ def fix_image(upload):
     col2.image(fixed)
     st.sidebar.markdown("\n")
     st.sidebar.download_button("Download fixed image", convert_image(fixed), "fixed.png", "image/png")
+
+
+# Telechargement image
+def convert_image(img):
+    buf = BytesIO() #creation d'un conteneur temporaire pour stocker l'image
+    img.save(buf, format="PNG") #enregistrement dans la mémoire tampon en format .PNG
+    byte_im = buf.getvalue() #recuperation des données (bytes)
+    return byte_im
+
 
 
 col1, col2 = st.columns(2)
