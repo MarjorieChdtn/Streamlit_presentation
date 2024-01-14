@@ -3,7 +3,7 @@ from rembg import remove #bibliothèque qui retire l'arrière-plan d'une image.
 from PIL import Image #bibliothèque de traitement d'image
 from io import BytesIO #classe Python qui traite les octets
 
-st.set_page_config(layout="wide", page_title="Image Background Remover")
+st.set_page_config(layout="wide", page_title="Suppression arrière-plan")
 
 st.write("## Détourer une image")
 st.sidebar.write("## Upload and download :gear:")
