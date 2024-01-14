@@ -23,7 +23,7 @@ def fix_image(upload):
     st.sidebar.download_button("Download fixed image", convert_image(fixed), "fixed.png", "image/png")
 
 
-# Telechargement image
+# Traitement image
 def convert_image(img):
     buf = BytesIO() #creation d'un conteneur temporaire pour stocker l'image
     img.save(buf, format="PNG") #enregistrement dans la mémoire tampon en format .PNG
