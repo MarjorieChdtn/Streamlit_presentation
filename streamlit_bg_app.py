@@ -21,11 +21,11 @@ def convert_image(img):
 
 def fix_image(upload):
     image = Image.open(upload)
-    col1.write("Original Image :camera:")
+    col1.write("Image originale :camera:")
     col1.image(image)
 
     fixed = remove(image)
-    col2.write("Fixed Image :wrench:")
+    col2.write("Image détourée :wrench:")
     col2.image(fixed)
     st.sidebar.markdown("\n")
     st.sidebar.download_button("Download fixed image", convert_image(fixed), "fixed.png", "image/png")
@@ -36,7 +36,7 @@ my_upload = st.sidebar.file_uploader("Upload an image", type=["png", "jpg", "jpe
 
 if my_upload is not None:
     if my_upload.size > MAX_FILE_SIZE:
-        st.error("The uploaded file is too large. Please upload an image smaller than 5MB.")
+        st.error("Fichier trop loud > 5MB.")
     else:
         fix_image(upload=my_upload)
 else:
